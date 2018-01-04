@@ -1,0 +1,7 @@
+.eslintrc
+.gitignore
+.npmignore
+.idea
+.travis.yml
+tests
+build
