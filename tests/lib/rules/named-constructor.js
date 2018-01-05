@@ -6,6 +6,8 @@ var rule = require("../../../lib/rules/named-constructor");
 var ruleTester = new RuleTester();
 ruleTester.run("named-constructor", rule, {
     valid: [
+        "FooClass.extend = Backbone.Model.extend;",
+        "var obj = _.extend({ foo: 1 }, {  bar:2 });",
         "var FooModel = BaseModel.extend({ constructor: function FooModel() { } });",
         "var BarView = BaseView.extend({ constructor: function BarView() { } });",
         "var BazCollection = BaseCollection.extend({ constructor: function BazCollection() { } });",
