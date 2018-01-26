@@ -3,7 +3,14 @@
 var RuleTester = require("eslint").RuleTester;
 var rule = require("../../../lib/rules/named-constructor");
 
-var ruleTester = new RuleTester();
+var ruleTester = new RuleTester({
+    settings: {
+        oro: {
+            backboneExtendablesTypes: ["View", "Model", "Collection", "Component", "Class"]
+        }
+    }
+});
+
 ruleTester.run("named-constructor", rule, {
     valid: [
         "FooClass.extend = Backbone.Model.extend;",
@@ -35,3 +42,26 @@ ruleTester.run("named-constructor", rule, {
         }
     ]
 });
+
+ruleTester = new RuleTester({
+    settings: {
+        oro: {}
+    }
+});
+
+ruleTester.run("named-constructor (no backboneExtendablesTypes in settings/oro)", rule, {
+    valid: [
+        "Backbone.View.extend({ initialize: function() { } });"
+    ],
+    invalid: []
+});
+
+ruleTester = new RuleTester();
+
+ruleTester.run("named-constructor (no settings/oro)", rule, {
+    valid: [
+        "Backbone.View.extend({ initialize: function() { } });"
+    ],
+    invalid: []
+});
+

@@ -21,8 +21,19 @@ $ npm install eslint-plugin-oro --save-dev
 **Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-oro` globally.
 
 ## Usage
+To turn on `eslint-plugin-oro` plugin, just add recommended configuration of the plugin to `extends` section of your `.eslintrc` config
+```json
+{
+    "extends": [
+        "plugin:oro/recommended"
+    ]
+}
 
-Add `oro` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+```
+
+Or if you want to use the plugin with custom configuration, you need to do few things.
+
+First, add `oro` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
@@ -41,6 +52,19 @@ Then configure the rules you want to use under the rules section.
     }
 }
 ```
+
+And finally, you need to provide custom settings for the plugin
+```json
+{
+    "settings": {
+        "oro": {
+            "backboneExtendablesTypes": ["View", "Model", "Collection"]
+        }
+    }
+}
+```
+Where:
+ - `backboneExtendablesTypes` is list of trailing parts of Backbone class names that implements Backbone's `extend` functionality (matches to names `Backbone.View`, `BaseView`, `UserModel`, `EntityCollection`, etc.) 
 
 # List of supported rules
 

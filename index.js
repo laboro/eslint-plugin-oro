@@ -11,10 +11,15 @@ module.exports = {
             },
             plugins: [
                 "oro"
-            ]
-        },
-        rules: {
-            "oro/named-constructor": "warn"
+            ],
+            settings: {
+                oro: {
+                    backboneExtendablesTypes: ["View", "Model", "Collection", "Component", "Class"]
+                }
+            },
+            rules: {
+                "oro/named-constructor": "warn"
+            }
         }
     }
 };
