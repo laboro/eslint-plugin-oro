@@ -1,4 +1,5 @@
-[![build status][travis-image]][travis-url]
+[![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
 
 # eslint-plugin-oro
 
@@ -70,5 +71,7 @@ Where:
 
 * [named-constructor](docs/rules/named-constructor.md)
 
-[travis-image]: https://img.shields.io/travis/laboro/eslint-plugin-oro/master.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/laboro/eslint-plugin-oro/master.svg
 [travis-url]: https://travis-ci.org/laboro/eslint-plugin-oro
+[coveralls-image]: https://coveralls.io/repos/github/laboro/eslint-plugin-oro/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/laboro/eslint-plugin-oro?branch=master
