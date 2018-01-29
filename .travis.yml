@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "lts/*"
+sudo: false
+notifications:
+   email: false
+after_script:
+  - cat build/coverage/lcov.info | ./node_modules/.bin/coveralls
