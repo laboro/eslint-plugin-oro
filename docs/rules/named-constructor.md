@@ -1,21 +1,21 @@
-# Enforce to use named constructors (named-constructor)
+# Enforce the use of named constructors (named-constructor)
 
-Backbone's `extend` method creates stub constructor method with `child` name, if there's no specific constructor defined.
-That lead to the issue that all instances created with the stub constructor are shown as `child`.
+Backbone's `extend` method creates a stub constructor method called `child` unless there is a specific constructor defined.
+As a result all class instances created with the stub constructor are shown as `child`.
 
-Execute in the console of Chrome browser the command
+For example, run the following command in Google Chrome console:
 ```js
     queryObjects(Backbone.View)
 ``` 
-And see similar result
+
 
 ![child instances](../images/child-instances.png)
 
-It is hard to answer: Which View is which? Are there Views that have to be removed from memory already? And etc.
+As you can see it is hard to answer which view is which, or if there are views that should be removed from memory already, etc.
 
 ## Rule Details
 
-The rule is aimed to enforce to use named constructor in order to give proper names to the instances.
+The rule is aimed to enforce the use of named constructors in order to give proper names to the instances.
 
 Examples of **incorrect** code for this rule:
 
