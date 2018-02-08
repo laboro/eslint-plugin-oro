@@ -32,7 +32,7 @@ Examples of **correct** code for this rule:
 ```js
     var BarClass = FooClass.extend({
         constructor: function BarClass() {
-            BarClass.__super__.apply(this, arguments);
+            BarClass.__super__.constructor.apply(this, arguments);
         },
         
         initialize: function () {
