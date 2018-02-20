@@ -20,6 +20,7 @@ ruleTester.run("named-constructor", rule, {
         "var BazCollection = BaseCollection.extend({ constructor: function BazCollection() { } });",
         "var QuzComponent = BaseComponent.extend({ constructor: function QuzComponent() { } });",
         "var FredClass = QuuxClass.extend({ constructor: function FredClass() { } });",
+        "QeeClass = QuuxClass.extend({ constructor: function QeeClass() { } });",
         "BaseModel.extend({ constructor: function FooModel() { } });"
     ],
 
@@ -39,6 +40,10 @@ ruleTester.run("named-constructor", rule, {
         {
             code: "var FredClass = QuuxClass.extend({ constructor: function BazClass() { } });",
             errors: [{message: "Constructor name `BazClass` mismatch the name of local variable `FredClass`"}]
+        },
+        {
+            code: "QeeClass = QuuxClass.extend({ constructor: function BazClass() { } });",
+            errors: [{message: "Constructor name `BazClass` mismatch the name of local variable `QeeClass`"}]
         }
     ]
 });
