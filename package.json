@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-oro",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Eslint rules for Oro",
   "keywords": [
     "eslint",
@@ -25,15 +25,15 @@
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
-    "eslint": "~3.9.1",
+    "eslint": "~6.5.1",
     "istanbul": "^0.4.5",
-    "mocha": "^3.1.2"
+    "mocha": "^7.0.0"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "peerDependencies": {
-    "eslint": ">=3.0.0"
+    "eslint": ">=6.5.0"
   },
   "license": "MIT",
   "repository": {
