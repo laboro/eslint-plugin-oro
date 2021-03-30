@@ -5,4 +5,4 @@ sudo: false
 notifications:
    email: false
 after_script:
-  - cat build/coverage/lcov.info | ./node_modules/.bin/coveralls
+  - cat .nyc_output/lcov.info | ./node_modules/.bin/coveralls
