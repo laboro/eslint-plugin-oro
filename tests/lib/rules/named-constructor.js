@@ -1,9 +1,12 @@
 "use strict";
 
-var RuleTester = require("eslint").RuleTester;
-var rule = require("../../../lib/rules/named-constructor");
+const RuleTester = require("eslint").RuleTester;
+const rule = require("../../../lib/rules/named-constructor");
 
-var ruleTester = new RuleTester({
+let ruleTester = new RuleTester({
+    parserOptions: {
+        ecmaVersion: 2019
+    },
     settings: {
         oro: {
             backboneExtendablesTypes: ["View", "Model", "Collection", "Component", "Class"]
@@ -14,12 +17,12 @@ var ruleTester = new RuleTester({
 ruleTester.run("named-constructor", rule, {
     valid: [
         "FooClass.extend = Backbone.Model.extend;",
-        "var obj = _.extend({ foo: 1 }, {  bar:2 });",
+        "let obj = _.extend({ foo: 1 }, {  bar:2 });",
         "var FooModel = BaseModel.extend({ constructor: function FooModel() { } });",
-        "var BarView = BaseView.extend({ constructor: function BarView() { } });",
-        "var BazCollection = BaseCollection.extend({ constructor: function BazCollection() { } });",
+        "const BarView = BaseView.extend({ constructor: function BarView() { } });",
+        "let BazCollection = BaseCollection.extend({ constructor: function BazCollection() { } });",
         "var QuzComponent = BaseComponent.extend({ constructor: function QuzComponent() { } });",
-        "var FredClass = QuuxClass.extend({ constructor: function FredClass() { } });",
+        "const FredClass = QuuxClass.extend({ constructor: function FredClass() { } });",
         "QeeClass = QuuxClass.extend({ constructor: function QeeClass() { } });",
         "BaseModel.extend({ constructor: function FooModel() { } });"
     ],
